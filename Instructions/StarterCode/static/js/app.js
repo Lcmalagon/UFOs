@@ -39,11 +39,29 @@ function handleClick(){
     d3.event.preventDefault();
 
     let date = d3.select("#datetime").property("value");
+    let city = d3.select("#city").property("value");
+    let state = d3.select("#state").property("value");
+    let country = d3.select("#country").property("value");
+    let shape = d3.select("#shape").property("value");
     let filterData = tableData;
 
     if(date) {
         filterData = filterData.filter((row) => row.datetime === date);
     }
+    if(city) {
+        filterData = filterData.filter((row) => row.city === city);
+    }
+    if(state) {
+        filterData = filterData.filter((row) => row.state === state);
+    }
+    if(country) {
+        filterData = filterData.filter((row) => row.country === country);
+    }
+    if(shape) {
+        filterData = filterData.filter((row) => row.shape === shape);
+    }
+    
+
     buildTable(filterData);
 }
 d3.selectAll("#filter-btn").on("click", handleClick);
