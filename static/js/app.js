@@ -37,7 +37,7 @@ function buildTable(data) {
 function handleClick(){
     // prevents page reloading
     d3.event.preventDefault();
-
+6
     let date = d3.select("#datetime").property("value");
     let city = d3.select("#city").property("value");
     let state = d3.select("#state").property("value");
